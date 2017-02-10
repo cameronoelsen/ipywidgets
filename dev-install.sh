@@ -32,20 +32,20 @@ set -e
 
 nbExtFlags="--sys-prefix $1"
 
-cd jupyter-js-widgets
-npm install
-cd ..
+# cd jupyter-js-widgets
+# npm install
+# cd ..
 
-cd widgetsnbextension
-npm install
-pip install -v -e .
-if [[ "$OSTYPE" == "msys" ]]; then
-    jupyter nbextension install --overwrite --py $nbExtFlags widgetsnbextension
-else
-    jupyter nbextension install --overwrite --py --symlink $nbExtFlags widgetsnbextension
-fi
-jupyter nbextension enable --py $nbExtFlags widgetsnbextension
-cd ..
+# cd widgetsnbextension
+# npm install
+# pip install -v -e .
+# if [[ "$OSTYPE" == "msys" ]]; then
+#     jupyter nbextension install --overwrite --py $nbExtFlags widgetsnbextension
+# else
+#     jupyter nbextension install --overwrite --py --symlink $nbExtFlags widgetsnbextension
+# fi
+# jupyter nbextension enable --py $nbExtFlags widgetsnbextension
+# cd ..
 
 if test "$skip_jupyter_lab" != yes; then
     cd jupyterlab_widgets
@@ -60,4 +60,4 @@ if test "$skip_jupyter_lab" != yes; then
     cd ..
 fi
 
-pip install -v -e .
+# pip install -v -e .
